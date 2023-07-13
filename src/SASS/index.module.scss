@@ -1,0 +1,14 @@
+@use "@SASS/mixins" as *;
+.main{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100%;
+    @include flex(row,center,center,wrap);
+
+    @media screen and (min-width:768px) {
+        align-items: start;
+    }
+    @media screen and (min-width:768px) {
+
+    }
+}
