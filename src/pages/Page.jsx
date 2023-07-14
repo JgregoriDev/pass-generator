@@ -14,7 +14,12 @@ const areCheckboxesChecked = {
 };
 export const Page = () => {
   const [max, setMax] = useState(30);
-  const [checkboxStatus, setCheckboxStatus] = useState(areCheckboxesChecked);
+  const [checkboxStatus, setCheckboxStatus] = useState({
+    isMinChecked: false,
+    isMayusChecked: false,
+    isNumberChecked: false,
+    isSymbolChecked: false,
+  });
   const ref = useRef(null);
   const handleSliderChange = (event) => {
     setMax(event.target.value);
@@ -88,29 +93,29 @@ export const Page = () => {
           <div className={Style.container__checkbox}>
             <input
               id="min"
+              value={checkboxStatus.isMinChecked}
               onChange={(evt) => handleCheckboxChange(evt)}
               type="checkbox"
-              value={checkboxStatus.isMinChecked}
               name=""
             />
-            <label htmlFor="min">Letras mayusculas</label>
+            <label htmlFor="min">Letras minusculas</label>
           </div>
           <div className={Style.container__checkbox}>
             <input
               id="mayus"
+              value={checkboxStatus.isMayusChecked}
               onChange={(evt) => handleCheckboxChange(evt)}
               type="checkbox"
-              value={checkboxStatus.isMayusChecked}
               name=""
             />
-            <label htmlFor="mayus">Letras Minusculas</label>
+            <label htmlFor="mayus">Letras mayusculas</label>
           </div>
           <div className={Style.container__checkbox}>
             <input
               id="num"
+              value={checkboxStatus.isNumberChecked}
               onChange={(evt) => handleCheckboxChange(evt)}
               type="checkbox"
-              value={checkboxStatus.isNumberChecked}
               name=""
             />
             <label htmlFor="num">Numeros</label>
@@ -118,9 +123,9 @@ export const Page = () => {
           <div className={Style.container__checkbox}>
             <input
               id="sim"
+              value={checkboxStatus.isMayusChecked}
               onChange={(evt) => handleCheckboxChange(evt)}
               type="checkbox"
-              value={checkboxStatus.isMayusChecked}
               name=""
             />
             <label htmlFor="sim">Simbolos</label>
